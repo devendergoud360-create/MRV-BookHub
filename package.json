@@ -1,0 +1,18 @@
+{
+  "name": "mrv-bookhub",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "test": "cd backend && NODE_ENV=test npx vitest run",
+    "test:all": "npm run parity && npm run test",
+    "parity": "node scripts/parity_check.js",
+    "build": "cd frontend && npm run build",
+    "lint": "cd backend && node --check server.js"
+  },
+  "devDependencies": {
+    "@vitest/coverage-v8": "^3.2.7",
+    "bcryptjs": "^2.4.3",
+    "supertest": "^7.3.2",
+    "vitest": "^3.2.7"
+  }
+}

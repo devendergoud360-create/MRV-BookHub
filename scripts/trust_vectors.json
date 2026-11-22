@@ -1,0 +1,7 @@
+[
+  {"ownerAccountAgeDays":365,"completedTransactions":10,"overdueTransactions":0,"ownerListingCount":5,"condition":"Good","hasImage":true,"hasIsbn":true,"descriptionLength":120,"listingAgeDays":10},
+  {"ownerAccountAgeDays":10,"completedTransactions":0,"overdueTransactions":2,"ownerListingCount":1,"condition":"Poor","hasImage":false,"hasIsbn":false,"descriptionLength":5,"listingAgeDays":400},
+  {"ownerAccountAgeDays":730,"completedTransactions":25,"overdueTransactions":1,"ownerListingCount":12,"condition":"Like New","hasImage":true,"hasIsbn":true,"descriptionLength":200,"listingAgeDays":2},
+  {"ownerAccountAgeDays":0,"completedTransactions":0,"overdueTransactions":0,"ownerListingCount":0,"condition":"unknown","hasImage":false,"hasIsbn":false,"descriptionLength":0,"listingAgeDays":0},
+  {"ownerAccountAgeDays":100,"completedTransactions":3,"overdueTransactions":1,"ownerListingCount":2,"condition":"Fair","hasImage":true,"hasIsbn":false,"descriptionLength":45,"listingAgeDays":120}
+]

@@ -1,0 +1,50 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: |
+            backend/package-lock.json
+            frontend/package-lock.json
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install backend
+        working-directory: backend
+        run: npm ci || npm install
+      - name: Install frontend
+        working-directory: frontend
+        run: npm ci || npm install
+
+      - name: Backend syntax/compile check
+        working-directory: backend
+        run: node --check server.js
+
+      - name: Frontend build
+        working-directory: frontend
+        run: npm run build
+
+      - name: TrustScore parity check
+        run: node scripts/parity_check.js
+
+      - name: Backend tests
+        working-directory: backend
+        env:
+          NODE_ENV: test
+        run: npm test
+
+      - name: Root invariant/integration tests
+        env:
+          NODE_ENV: test
+        run: npm test -- --run || npx vitest run
