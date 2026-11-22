@@ -208,7 +208,12 @@ async function seed() {
   console.log('NOTE: Development-only credentials. Do not use in production.');
 }
 
-seed().catch((err) => {
-  console.error('Seed failed:', err);
-  process.exit(1);
-});
+if (require.main === module) {
+  seed().catch((err) => {
+    console.error('Seed failed:', err);
+    process.exit(1);
+  });
+}
+
+module.exports = { seed, seedDatabase: seed };
+

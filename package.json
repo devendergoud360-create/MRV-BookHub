@@ -10,6 +10,7 @@
     "lint": "cd backend && node --check server.js"
   },
   "devDependencies": {
+    "@playwright/test": "^1.65.1",
     "@vitest/coverage-v8": "^3.2.7",
     "bcryptjs": "^2.4.3",
     "supertest": "^7.3.2",
